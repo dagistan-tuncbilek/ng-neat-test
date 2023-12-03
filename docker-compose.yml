@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dtuncbilek/pos:00.1.0
+    container_name: pos_angular
+    restart: unless-stopped
+    ports:
+      - "13256:80"
+
+networks:
+  afm_network:
+    external: true
+
+
+# build app
+# docker compose build
+# docker push dtuncbilek/pos:00.1.0
+
+
+
+
